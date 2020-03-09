@@ -142,7 +142,7 @@ const LandingPage = ({ landingImages, landingReviews, landingTours }) => {
 export default LandingPage;
 
 LandingPage.getInitialProps = async ({query}) => {
-    const res = await fetch("/api/landing_tours");
+    const res = await fetch("http://localhost:3000/api/landing_tours");
     const landingData = await res.json();
     return { ...landingData };
 }

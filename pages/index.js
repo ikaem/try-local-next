@@ -81,12 +81,7 @@ const Index = ({briefTours}) => {
 export default Index;
 
 Index.getInitialProps = async (ctx) => {
-  const res = await fetch ("/api/tours");
+  const res = await fetch ("http://localhost:3000/api/tours");
   const briefTours = await res.json();
   return {briefTours};
 }
-
-
-
-
-

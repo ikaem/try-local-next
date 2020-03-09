@@ -207,7 +207,8 @@ const TourDetailed = ({tour}) => {
 export default TourDetailed;
 
 TourDetailed.getInitialProps = async ({query}) => {
-    const res = await fetch (`http://localhost:3000/api/${query.id}`);
+    // const res = await fetch (`http://localhost:3000/api/${query.id}`);
+    const res = await fetch (`http://localhost:${process.env.PORT || "3000"}/api/${query.id}`);
     const tour = await res.json();
     console.log(tour);
     return {tour};

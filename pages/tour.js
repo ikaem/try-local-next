@@ -7,7 +7,6 @@ import CtaBook from "../components/cta-book.component/cta-book.component";
 import TourDetailed from "./tour/[id]";
 
 export default (props) => {
-    console.log("tu sam", props);
     return (
     <Layout>
         <main>
@@ -184,7 +183,6 @@ export default (props) => {
 }
 
 TourDetailed.getInitialProps = async ({query}) => {
-    console.log(ctx);
     const res = await fetch (`http://localhost:3000/api/${query.id}`);
     const tour = await res.json();
     return {tour};

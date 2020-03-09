@@ -1,4 +1,4 @@
-import {tours} from "../../tempDB/tempDB";
+import {tours} from "../../public/tempDB/tempDB";
 
 export default (req, res) => {
     const { tour_id } = req.query;

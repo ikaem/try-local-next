@@ -208,7 +208,7 @@ export default TourDetailed;
 
 TourDetailed.getInitialProps = async ({query}) => {
     // const res = await fetch (`http://localhost:3000/api/${query.id}`);
-    const res = await fetch (`https://try-local-next.herokuapp.com/api/${query.id}`);
+    const res = await fetch (`/api/${query.id}`);
     const tour = await res.json();
     return {tour};
   }

@@ -7,7 +7,8 @@ import Imagery from "../components/imagery.component/imagery.component";
 import Reviews from "../components/reviews.component/reviews.component";
 import TourBrief from "../components/tour-brief.component/tour-brief.component";
 
-const LandingPage = ({ landingImages, landingReviews, landingTours }) => {
+const LandingPage = ({ landingImages, landingReviews, landingBriefs }) => {
+    console.log(landingBriefs);
     return (
     <Layout>
         <main>
@@ -24,7 +25,7 @@ const LandingPage = ({ landingImages, landingReviews, landingTours }) => {
                 <div className="for-a-day-tours pad-left-right-mobile">
 
                 {
-                    landingTours.map(tour => <TourBrief key={tour.tourId} {...tour} />)
+                    landingBriefs.map(tour => <TourBrief key={tour.tourId} {...tour} />)
                 }
 
                 </div>
@@ -144,5 +145,6 @@ export default LandingPage;
 LandingPage.getInitialProps = async ({query}) => {
     const res = await fetch("http://localhost:3000/api/landing_tours");
     const landingData = await res.json();
+    // console.log("landingData", landingData)
     return { ...landingData };
 }

@@ -2,8 +2,8 @@ export default ({reviews}) => {
     return (
     <div className="reviews-component">
         <ul>
-        {reviews && reviews.map(review => 
-            <li key={review.quote}>
+        {reviews && reviews.map((review, index) => 
+            <li key={index}>
                 <q>{review.quote}</q>
                 {` - `}
                 <span>{review.author}</span>

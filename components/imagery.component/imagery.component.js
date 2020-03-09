@@ -2,8 +2,11 @@ export default ({images}) => {
     console.log(images);
     return (
     <div className="imagery-component">
-        {images.map(image => 
-            <img className="imagery-image" src={image} alt="try local staff"/>)
+        {images.map((image, index) => 
+            <img
+                key={index} 
+                className="imagery-image" 
+                src={image} alt="try local staff"/>)
         }
         <style jsx>{`
             .imagery-component {
@@ -36,7 +39,7 @@ export default ({images}) => {
                     grid-row: span 2;
                     align-self: stretch;
                 }
-                .imagery-image:last-of-type {
+                .imagery-image:nth-of-type(4) {
                     grid-column: 3;
                 }
             }

@@ -11,7 +11,9 @@
     "@zeit/next-css": "^1.0.1",
     "fast-average-color": "^6.0.1",
     "isomorphic-unfetch": "^3.0.0",
+    "mongodb": "^3.5.4",
     "next": "9.2.2",
+    "next-connect": "^0.6.0",
     "react": "16.13.0",
     "react-dom": "16.13.0"
   }

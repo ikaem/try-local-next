@@ -13,8 +13,7 @@ export default () => {
                     <PageIntro
                         title={"About Try Local"}
                         leadRest={"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin accumsan eget felis vel bibendum. Cras dictum nisi eget sem condimentum, ac vehicula felis viverra."}
-                        // backgroundImage={"/assets/images/about/about-background-alt.jpg"}
-                        backgroundImage={"https://as01.epimg.net/futbol/imagenes/2019/09/09/primera/1568022617_510344_1568022983_noticia_normal.jpg"}
+                        backgroundImage={"/assets/images/about/about-background-alt.jpg"}
                     />
                 </div>
                 <h2 className="pad-left-right-mobile">Who are we?</h2>

@@ -5,6 +5,7 @@ import TourBrief from "../components/tour-brief.component/tour-brief.component";
 import fetch from "isomorphic-unfetch";
 
 const Index = ({briefTours}) => {
+
   return (
     <Layout>
       <main>

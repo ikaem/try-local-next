@@ -11,6 +11,7 @@ export default () => {
             <input type="datetime-local" name="date" id="date"/>
             <label htmlFor="people">Number of People</label>
             <input type="number" name="people" id="people" min="1"/>
+            <textarea defaultValue="need are for message too" />
             <button className="cta-book-button">Book</button>
         </form>
         <style jsx>{`

@@ -1,14 +1,70 @@
+import { useState } from "react";
+
+import { sendMessage } from "../../services/userInteraction";
+
 export default () => {
+    const [contactFormData, setContactFormData] = useState({
+        name: "",
+        email: "",
+        message: "",
+    });
+    const [isMessageSent, setIsMessageSent] = useState(false);
+    const handleChange = (e) => {
+        const {name, value} = e.target;
+        setContactFormData(prevData => ({
+            ...prevData,
+            [name]: value
+        }));
+    }
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        try {
+            const resp = await sendMessage(contactFormData);
+            console.log("resp", resp);
+            if(resp.message !== "message successfully sent!") throw new Error(resp.message);
+
+            setIsMessageSent(true);
+            setContactFormData({
+                name: "",
+                email: "",
+                message: "",
+            })
+        }
+        catch (error) {
+            console.log(error);
+        }
+    }
+
+
     return (
     <div className="contact-form-component">
         <h2>Have a question? Send us a message</h2>
-        <form className="contact-form">
+        <form 
+            className="contact-form"
+            onSubmit={handleSubmit}>
             <label htmlFor="name">Name</label>
-            <input className="contact-form-input" type="text" name="name" id="name"/>
+            <input 
+                required
+                className="contact-form-input" 
+                type="text" name="name" id="name"
+                value={contactFormData.name}
+                onChange={handleChange}/>
             <label htmlFor="email">Email</label>
-            <input className="contact-form-input" type="email" name="email" id="email"/>
+            <input 
+                required
+                className="contact-form-input" 
+                type="email" name="email" id="email"
+                value={contactFormData.email}
+                onChange={handleChange}/>
+
             <label htmlFor="message">Message</label>
-            <textarea className="contact-form-input" name="message" id="message" cols="30" rows="10"/>
+            <textarea 
+                required
+                className="contact-form-input" 
+                name="message" id="message" cols="30" rows="10"
+                value={contactFormData.message}
+                onChange={handleChange}/>
+
             <button className="contact-form-button">Send</button>
         </form>
         <style jsx>{`

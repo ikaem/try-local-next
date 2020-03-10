@@ -81,9 +81,8 @@ const Index = ({briefTours}) => {
 export default Index;
 
 Index.getInitialProps = async (ctx) => {
-  // const res = await fetch ("http://localhost:3000/api/tours");
-  // const res = await fetch (`http://localhost:${process.env.PORT || "3000"}/api/tours`);
-  const res = await fetch (`https://try-local-next.herokuapp.com/api/tours`);
+  const res = await fetch ("http://localhost:3000/api/tours");
+  // const res = await fetch (`https://try-local-next.herokuapp.com/api/tours`);
   const briefTours = await res.json();
   return {briefTours};
 }

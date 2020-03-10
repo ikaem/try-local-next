@@ -2,7 +2,6 @@ import { MongoClient } from "mongodb";
 import nextConnect from "next-connect";
 
 const client = new MongoClient("mongodb://heroku_h7w01kcr:crg8j14vhrnhinfmcvauddn7f8@ds235078.mlab.com:35078/heroku_h7w01kcr", {
-    // const client = new MongoClient("mongodb://localhost", {
     useNewUrlParser: true,
     useUnifiedTopology: true,
 });

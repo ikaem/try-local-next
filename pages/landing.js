@@ -143,8 +143,8 @@ const LandingPage = ({ landingImages, landingReviews, landingBriefs }) => {
 export default LandingPage;
 
 LandingPage.getInitialProps = async ({query}) => {
-    const res = await fetch("http://localhost:3000/api/landing_tours");
-    // const res = await fetch (`https://try-local-next.herokuapp.com/api/landing_tours`);
+    // const res = await fetch("http://localhost:3000/api/landing_tours");
+    const res = await fetch (`https://try-local-next.herokuapp.com/api/landing_tours`);
     const landingData = await res.json();
     return { ...landingData };
 }

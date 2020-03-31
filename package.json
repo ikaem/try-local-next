@@ -15,7 +15,7 @@
     "fast-average-color": "^6.0.1",
     "isomorphic-unfetch": "^3.0.0",
     "mongodb": "^3.5.4",
-    "next": "9.2.2",
+    "next": "9.3.2",
     "next-connect": "^0.6.0",
     "nodemailer": "^6.4.4",
     "react": "16.13.0",
